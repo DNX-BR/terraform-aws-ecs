@@ -4,6 +4,10 @@ variable "name" {
   description = "Name of this ECS cluster."
 }
 
+variable "enable_container_insight" {
+  default = false
+}
+
 variable "instance_types" {
   description = "Instance type for ECS workers"
   type        = list(any)

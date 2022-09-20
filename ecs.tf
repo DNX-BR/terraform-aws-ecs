@@ -13,4 +13,13 @@ resource "aws_ecs_cluster" "ecs" {
     ]
   }
 
+    dynamic "setting" {
+      for_each = var.enable_container_insight ? ["1"]: []
+    content {
+        name  = "containerInsights"
+        value = "enabled"
+    }
+    
+  
+
 }
